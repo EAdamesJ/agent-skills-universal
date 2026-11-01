@@ -6,7 +6,7 @@
 - [x] Task 4: Add host installation and compatibility documentation.
 - [x] Task 5: Add dependency-free validation and focused tests.
 - [x] Task 6: Add CI quality gates and secret-scan protections.
-- [ ] Task 7: Review, commit, and publish the repository.
+- [x] Task 7: Review, commit, and publish the repository.
 
 ## Checkpoint: Foundation
 
@@ -24,4 +24,4 @@
 - [x] Tests pass.
 - [x] Validator passes.
 - [x] Staged secret scan passes.
-- [ ] GitHub remote and pushed commit are verified.
+- [x] GitHub remote and pushed commit are verified.

@@ -36,14 +36,14 @@ Turn the MIT-licensed reference pack into a clearly attributed, cross-host distr
 
 ### Phase 4: Ship
 
-- [ ] Task 7: Review the full diff, run release checks, commit atomically, and publish to GitHub.
+- [x] Task 7: Review the full diff, run release checks, commit atomically, and publish to GitHub.
 
 ### Checkpoint: Complete
 
 - [x] `npm test` passes.
 - [x] `npm run validate` passes.
 - [x] No secrets are present in the staged diff.
-- [ ] GitHub repository URL and pushed commit are verified.
+- [x] GitHub repository URL and pushed commit are verified.
 
 ## Risks and mitigations
 

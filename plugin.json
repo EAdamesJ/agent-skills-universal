@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "universal-agent-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Portable production engineering workflows for Claude Code, DeepSeek Harness, Codex, and compatible agents.",
   "author": { "name": "Enmanuel Adames", "url": "https://github.com/EAdamesJ" },
   "homepage": "https://github.com/EAdamesJ/agent-skills-universal",

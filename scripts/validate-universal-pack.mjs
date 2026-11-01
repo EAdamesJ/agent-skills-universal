@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 export const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const expectedSkillCount = 27;
+export const expectedPackVersion = '0.2.0';
 
 function stripQuotes(value) {
   const trimmed = value.trim();
@@ -115,7 +116,7 @@ async function validateManifests(root, errors) {
       const resolvedSkills = resolve(root, manifest.skills);
       if (resolvedSkills !== resolve(root, 'skills')) errors.push(`${manifestPath}: skills must resolve to ./skills`);
       if (manifest.name !== 'universal-agent-skills') errors.push(`${manifestPath}: unexpected plugin name`);
-      if (manifest.version !== '0.1.0') errors.push(`${manifestPath}: unexpected initial version`);
+      if (manifest.version !== expectedPackVersion) errors.push(`${manifestPath}: unexpected pack version`);
     } catch (error) {
       errors.push(error instanceof Error ? `${manifestPath}: ${error.message}` : `${manifestPath}: invalid JSON`);
     }
@@ -126,7 +127,7 @@ async function validateManifests(root, errors) {
     try {
       const manifest = JSON.parse(await readFile(absolutePath, 'utf8'));
       if (manifest.name !== 'universal-agent-skills') errors.push(`${manifestPath}: unexpected name`);
-      if (manifest.version !== '0.1.0') errors.push(`${manifestPath}: unexpected version`);
+      if (manifest.version !== expectedPackVersion) errors.push(`${manifestPath}: unexpected pack version`);
     } catch (error) {
       errors.push(error instanceof Error ? `${manifestPath}: ${error.message}` : `${manifestPath}: invalid JSON`);
     }

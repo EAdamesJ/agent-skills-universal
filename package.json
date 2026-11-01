@@ -1,6 +1,6 @@
 {
   "name": "universal-agent-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Portable production engineering skills for Claude Code, DeepSeek Harness, Codex, and compatible agents.",
   "license": "MIT",

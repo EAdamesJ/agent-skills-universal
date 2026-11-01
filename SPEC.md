@@ -33,7 +33,7 @@ Success means a contributor can clone the repository, validate it with one comma
 - **DeepSeek projection:** `.agents/skills/` contains a generated mirror of `skills/`, preserving resource paths so the Harness filesystem provider can discover the pack from a workspace checkout.
 - **Metadata:** `.claude-plugin/plugin.json` and `.codex-plugin/plugin.json` point at the canonical `skills/` directory.
 - **Validation:** `node --test` covers the validator contract; `npm run validate` runs repository checks without third-party packages.
-- **Versioning:** Start at `0.1.0`; future releases follow SemVer and keep the changelog human-readable.
+- **Versioning:** The initial release was `0.1.0`; additive releases follow SemVer and keep the changelog human-readable.
 
 ## Commands
 

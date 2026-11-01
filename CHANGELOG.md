@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0] - 2026-11-01
+
+### Added
+
+- Official-format DeepSeek Harness reference bundle with a safe diagnostic plugin.
+- Negative-path validator tests for mirror drift, manifests, links, and secret-shaped values.
+
+### Changed
+
+- DeepSeek routing now reaches 100% rank-1 on the checked-in trigger suite.
+- Updated DeepSeek Harness documentation and links to the current official preview docs.
+
 ## [0.1.0] - 2026-11-01
 
 ### Added

@@ -40,15 +40,15 @@ Turn the MIT-licensed reference pack into a clearly attributed, cross-host distr
 
 ### Phase 5: Verified DeepSeek extension
 
-- [ ] Task 8: Add an official-format DeepSeek Harness reference bundle with a safe load diagnostic and installation guide.
-- [ ] Task 9: Tighten DeepSeek skill routing and require rank-1 activation for the safety prompts.
-- [ ] Task 10: Add negative-path tests for mirror parity, manifests, links, and secret scanning.
+- [x] Task 8: Add an official-format DeepSeek Harness reference bundle with a safe load diagnostic and installation guide.
+- [x] Task 9: Tighten DeepSeek skill routing and require rank-1 activation for the safety prompts.
+- [x] Task 10: Add negative-path tests for mirror parity, manifests, links, and secret scanning.
 
 ### Checkpoint: Verified extension
 
-- [ ] The bundle manifest, patch, and entry point satisfy the documented DSH shape.
-- [ ] DeepSeek routing reaches 100% rank-1 on the checked-in trigger set.
-- [ ] Validator failure modes have regression tests.
+- [x] The bundle manifest, patch, and entry point satisfy the documented DSH shape.
+- [x] DeepSeek routing reaches 100% rank-1 on the checked-in trigger set.
+- [x] Validator failure modes have regression tests.
 
 ### Checkpoint: Complete
 

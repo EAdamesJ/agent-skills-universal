@@ -52,10 +52,10 @@ Turn the MIT-licensed reference pack into a clearly attributed, cross-host distr
 
 ### Checkpoint: Complete
 
-- [ ] `npm test` passes.
-- [ ] `npm run validate` passes.
-- [ ] No secrets are present in the staged diff.
-- [ ] GitHub repository URL and pushed commit are verified.
+- [x] `npm test` passes.
+- [x] `npm run validate` passes.
+- [x] No secrets are present in the staged diff.
+- [x] GitHub repository URL and pushed commit are verified.
 
 ## Risks and mitigations
 

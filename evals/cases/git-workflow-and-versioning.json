@@ -32,7 +32,7 @@
         "prompt": "Add a loading spinner to the submit button"
       },
       {
-        "prompt": "Write integration tests for the payments API",
+        "prompt": "Use a red-green-refactor loop to write integration tests for the payments API",
         "owner": "test-driven-development"
       },
       {

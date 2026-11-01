@@ -4,19 +4,19 @@
     "positive": [
       {
         "prompt": "Audit this DeepSeek Harness plugin before giving it filesystem and network access",
-        "top_k": 3
+        "top_k": 1
       },
       {
         "prompt": "Before enabling an untrusted DeepSeek Harness extension with API keys, review its filesystem and network permissions",
-        "top_k": 3
+        "top_k": 1
       },
       {
         "prompt": "Review a Harness skill for prompt injection and credential exfiltration risk",
-        "top_k": 3
+        "top_k": 1
       },
       {
         "prompt": "Decide whether this untrusted dsh extension is safe to enable in a sensitive workspace",
-        "top_k": 3
+        "top_k": 1
       }
     ],
     "negative": [

@@ -1,6 +1,6 @@
 ---
 name: deepseek-harness-plugin-development
-description: Guides design, implementation, installation, and verification of DeepSeek Harness Cordis plugins, bundles, presets, and workspace skills. Use when a task changes a Harness profile, plugin composition, skill provider, tool, UI extension, or agent preset.
+description: Guides implementation and debugging of DeepSeek Harness Cordis plugins, bundles, presets, profiles, and workspace skills. Use when authoring or changing a Harness composition, skill provider, tool, UI extension, or agent preset.
 ---
 
 # DeepSeek Harness plugin development

@@ -1,6 +1,6 @@
 ---
 name: deepseek-harness-safety-review
-description: Performs a preflight threat assessment of untrusted dsh extensions, model-generated commands, credentials, filesystem access, and network permissions. Use before enabling an unfamiliar extension or opening a sensitive workspace.
+description: "Performs a DeepSeek Harness security preflight and plugin audit: threat model, abuse-case tests, least-privilege controls, go-no-go decision, and rollback plan for untrusted dsh plugins and extensions, model-generated commands, prompt injection, credentials, filesystem, process, and network access. Use before enabling or installing unfamiliar Harness code or opening a sensitive workspace."
 ---
 
 # DeepSeek Harness safety review

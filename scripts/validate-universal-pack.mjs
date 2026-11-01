@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { readFile, readdir, stat } from 'node:fs/promises';
-import { dirname, join, relative, resolve, sep } from 'node:path';
+import { dirname, join, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -133,6 +133,55 @@ async function validateManifests(root, errors) {
   }
 }
 
+async function validateDeepSeekBundle(root, errors) {
+  const bundleRoot = join(root, 'integrations', 'deepseek-harness', 'universal-agent-skills-bundle');
+  const manifestPath = join(bundleRoot, 'package.json');
+  try {
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    if (manifest.name !== 'universal-agent-skills-dsh-bundle') {
+      errors.push(`${manifestPath}: unexpected bundle name`);
+    }
+    if (manifest.version !== '0.1.0') {
+      errors.push(`${manifestPath}: unexpected bundle version`);
+    }
+    if (manifest.type !== 'module') {
+      errors.push(`${manifestPath}: bundle must use ES modules`);
+    }
+    if (manifest.main !== 'index.js') {
+      errors.push(`${manifestPath}: bundle main must be index.js`);
+    }
+    if (manifest.engines?.dsh !== '>=0.2.0-0 <0.3.0') {
+      errors.push(`${manifestPath}: unexpected engines.dsh range`);
+    }
+    if (manifest.dsh?.bundle?.patch !== './cordis.patch.yml') {
+      errors.push(`${manifestPath}: dsh.bundle.patch must be ./cordis.patch.yml`);
+    }
+    for (const file of ['index.js', 'cordis.patch.yml', 'README.md']) {
+      if (!manifest.files?.includes(file)) errors.push(`${manifestPath}: files must include ${file}`);
+      try {
+        await stat(join(bundleRoot, file));
+      } catch {
+        errors.push(`${manifestPath}: missing bundle file ${file}`);
+      }
+    }
+
+    const patch = await readFile(join(bundleRoot, 'cordis.patch.yml'), 'utf8');
+    if (!patch.includes('id: universal-agent-skills-diagnostic') || !patch.includes('name: universal-agent-skills-dsh-bundle')) {
+      errors.push(`${bundleRoot}/cordis.patch.yml: diagnostic plugin row is missing`);
+    }
+
+    const entry = await readFile(join(bundleRoot, 'index.js'), 'utf8');
+    if (!entry.includes("export const name = 'universal-agent-skills-dsh-bundle'")) {
+      errors.push(`${bundleRoot}/index.js: named plugin export is missing`);
+    }
+    if (!/export function apply\s*\(/.test(entry)) {
+      errors.push(`${bundleRoot}/index.js: apply function is missing`);
+    }
+  } catch (error) {
+    errors.push(error instanceof Error ? `${manifestPath}: ${error.message}` : `${manifestPath}: invalid JSON`);
+  }
+}
+
 async function validateLinks(root, errors) {
   const files = [
     'README.md',
@@ -191,6 +240,7 @@ export async function validatePack(root = repositoryRoot) {
   await validateSkills(root, errors);
   await validateMirror(root, errors);
   await validateManifests(root, errors);
+  await validateDeepSeekBundle(root, errors);
   await validateLinks(root, errors);
   await validateSecrets(root, errors);
 

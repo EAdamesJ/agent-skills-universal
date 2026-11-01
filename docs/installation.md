@@ -38,7 +38,7 @@ DeepSeek Harness discovers workspace skills through its filesystem skill provide
 ```text
 git clone https://github.com/EAdamesJ/agent-skills-universal.git
 cd agent-skills-universal
-dsh web
+npx @deepseek-ai/dsh web
 ```
 
 If you modify `skills/`, regenerate the projection:
@@ -48,6 +48,8 @@ npm run sync:deepseek
 ```
 
 The Harness is in developer preview and its plugin APIs can change. Read [deepseek-harness.md](deepseek-harness.md) and [safety.md](safety.md) before enabling persistent bundles or credentials.
+
+The optional reference bundle lives at `integrations/deepseek-harness/universal-agent-skills-bundle/`. Install it only into a disposable profile; it is a diagnostic bundle and does not grant additional tools or permissions.
 
 ## Keeping an installation current
 

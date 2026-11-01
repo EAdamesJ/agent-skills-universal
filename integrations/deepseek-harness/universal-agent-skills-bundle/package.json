@@ -1,0 +1,20 @@
+{
+  "name": "universal-agent-skills-dsh-bundle",
+  "version": "0.1.0",
+  "description": "A safe DeepSeek Harness bundle smoke test for Universal Agent Skills.",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-0 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

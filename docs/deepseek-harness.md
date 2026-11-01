@@ -1,6 +1,6 @@
 # DeepSeek Harness adapter
 
-DeepSeek Harness (`dsh`) is an open-source, plugin-oriented agent harness. Its upstream project describes the current release as a developer preview with compatibility-breaking changes possible. This repository therefore integrates through the stable filesystem convention rather than pretending to provide a long-lived internal plugin API.
+DeepSeek Harness (`dsh`) is an open-source, plugin-oriented agent harness. Its upstream project describes the current release as a developer preview with compatibility-breaking changes possible. This repository uses the documented filesystem skill provider and ships an optional reference bundle that exercises the documented bundle seam.
 
 ## Discovery model
 
@@ -17,7 +17,7 @@ The projection includes supporting files so relative references continue to reso
 ## Usage
 
 1. Open the repository root as the Harness workspace.
-2. Start the desired `dsh` profile.
+2. Start the desired profile with `npx @deepseek-ai/dsh web` or an installed `dsh` CLI.
 3. Confirm the skill catalog lists the expected names.
 4. Invoke a skill explicitly for the first run and inspect the resulting tool trace.
 5. Run `npm run validate` after changes to the canonical tree.
@@ -29,12 +29,28 @@ The projection includes supporting files so relative references continue to reso
 
 These skills are not required for ordinary application development and should not be copied into a portable skill pack without their trigger conditions.
 
+## Optional native bundle
+
+The repository includes [`integrations/deepseek-harness/universal-agent-skills-bundle/`](../integrations/deepseek-harness/universal-agent-skills-bundle/), an official-format `dsh.bundle` package. It inserts one diagnostic plugin and proves that a profile can install and remove the bundle; it deliberately grants no shell, filesystem, network, browser, or credential access.
+
+Install it only into a disposable profile:
+
+```text
+dsh plugin --profile universal-agent-skills add ../agent-skills-universal/integrations/deepseek-harness/universal-agent-skills-bundle
+dsh --profile universal-agent-skills --dump-config
+```
+
+The normal `.agents/skills/` projection remains the recommended path when only skills are needed.
+
 ## Compatibility boundary
 
-This repository does not ship a DSH runtime, Cordis package, or MCP server. It ships Markdown instructions and a workspace projection. For a real persistent plugin, follow the Harness project's current bundle and plugin-manager documentation rather than copying an old patch format from this repository.
+This repository does not ship a DSH runtime or MCP server. It ships Markdown instructions, a workspace projection, and the optional diagnostic bundle above. For a production plugin, follow the Harness project's current bundle and plugin-manager documentation rather than copying an old patch format from this repository.
 
 ## Sources
 
 - [DeepSeek Harness repository](https://github.com/deepseek-ai/deepseek-harness)
-- [DeepSeek Harness architecture](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/architecture.md)
-- [DeepSeek Harness safety notice](https://github.com/deepseek-ai/deepseek-harness/blob/main/SAFETY.md)
+- [DeepSeek Harness architecture](https://deepseek-harness.github.io/deepseek-harness/en/reference/)
+- [DeepSeek Harness first-plugin guide](https://deepseek-harness.github.io/deepseek-harness/en/develop/basic/)
+- [DeepSeek Harness bundle guide](https://deepseek-harness.github.io/deepseek-harness/en/develop/basic/publish)
+- [DeepSeek Harness filesystem skill provider](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/skill/skill-filesystem/README.md)
+- [DeepSeek Harness safety notice](https://github.com/deepseek-ai/deepseek-harness/blob/master/SAFETY.md)

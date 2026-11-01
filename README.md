@@ -42,10 +42,10 @@ DeepSeek Harness is currently a developer preview. Clone the repository into the
 ```text
 git clone https://github.com/EAdamesJ/agent-skills-universal.git
 cd agent-skills-universal
-dsh web
+npx @deepseek-ai/dsh web
 ```
 
-The checked-in `.agents/skills/` directory is the Harness discovery projection. It is intentionally committed so a fresh clone works without a build step. Review [docs/deepseek-harness.md](docs/deepseek-harness.md) and [docs/safety.md](docs/safety.md) before enabling plugins or granting access to credentials, files, or network resources.
+The checked-in `.agents/skills/` directory is the Harness discovery projection. It is intentionally committed so a fresh clone works without a build step. An optional official-format diagnostic bundle is documented in [docs/deepseek-harness.md](docs/deepseek-harness.md). Review that guide and [docs/safety.md](docs/safety.md) before enabling plugins or granting access to credentials, files, or network resources.
 
 ### Any compatible host
 

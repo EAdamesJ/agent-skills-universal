@@ -36,7 +36,7 @@ The repository includes [`integrations/deepseek-harness/universal-agent-skills-b
 Install it only into a disposable profile:
 
 ```text
-dsh plugin --profile universal-agent-skills add ../agent-skills-universal/integrations/deepseek-harness/universal-agent-skills-bundle
+dsh plugin --profile universal-agent-skills add ./integrations/deepseek-harness/universal-agent-skills-bundle
 dsh --profile universal-agent-skills --dump-config
 ```
 

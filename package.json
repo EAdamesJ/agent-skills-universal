@@ -8,9 +8,10 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test tests/validate-universal-pack.test.mjs",
+    "test": "node --test tests/validate-universal-pack.test.mjs tests/smoke-deepseek-bundle.test.mjs",
     "validate": "node scripts/validate-universal-pack.mjs",
     "sync:deepseek": "node scripts/sync-deepseek-skills.mjs",
+    "smoke:deepseek": "node scripts/smoke-deepseek-bundle.mjs",
     "check": "npm test && npm run validate"
   }
 }

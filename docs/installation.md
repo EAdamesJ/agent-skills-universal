@@ -51,6 +51,8 @@ The Harness is in developer preview and its plugin APIs can change. Read [deepse
 
 The optional reference bundle lives at `integrations/deepseek-harness/universal-agent-skills-bundle/`. Install it only into a disposable profile; it is a diagnostic bundle and does not grant additional tools or permissions.
 
+To verify the bundle end to end in an isolated temporary profile, run `npm run smoke:deepseek` from the repository root. This uses the pinned preview CLI and does not modify the user's normal Harness profile.
+
 ## Keeping an installation current
 
 Pin a release tag for reproducibility when the host supports it. For a checkout, pull updates, run `npm run sync:deepseek`, and run `npm run check` before using the updated skills in a sensitive workspace.

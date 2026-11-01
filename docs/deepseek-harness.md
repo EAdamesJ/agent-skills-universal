@@ -42,6 +42,16 @@ dsh --profile universal-agent-skills --dump-config
 
 The normal `.agents/skills/` projection remains the recommended path when only skills are needed.
 
+## Runtime smoke test
+
+Maintainers can verify the full bundle path without changing a user profile or requiring an API key:
+
+```text
+npm run smoke:deepseek
+```
+
+The script pins the verified `@deepseek-ai/dsh@0.2.1-rc.5` CLI, creates a temporary `DSH_HOME` and npm cache, installs the local bundle, checks the composed configuration, and boots the profile until the diagnostic plugin reports that it loaded. The temporary profile and cache are removed when the check finishes.
+
 ## Compatibility boundary
 
 This repository does not ship a DSH runtime or MCP server. It ships Markdown instructions, a workspace projection, and the optional diagnostic bundle above. For a production plugin, follow the Harness project's current bundle and plugin-manager documentation rather than copying an old patch format from this repository.

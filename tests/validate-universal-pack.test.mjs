@@ -17,7 +17,9 @@ async function validateRepositoryCopy(mutator) {
     await cp(repositoryRoot, copyRoot, {
       recursive: true,
       filter(source) {
-        return !source.includes(`${sep}.git${sep}`) && !source.includes(`${sep}node_modules${sep}`);
+        return !source.includes(`${sep}.git${sep}`)
+          && !source.includes(`${sep}node_modules${sep}`)
+          && !source.includes(`${sep}work${sep}`);
       },
     });
     await mutator(copyRoot);

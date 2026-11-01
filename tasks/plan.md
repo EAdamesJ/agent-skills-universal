@@ -57,6 +57,16 @@ Turn the MIT-licensed reference pack into a clearly attributed, cross-host distr
 - [x] No secrets are present in the staged diff.
 - [x] GitHub repository URL and pushed commit are verified.
 
+### Phase 6: Runtime proof
+
+- [x] Task 11: Add a reproducible, isolated DeepSeek Harness runtime smoke test and manual-dispatch CI job.
+
+### Checkpoint: Runtime proof
+
+- [x] The pinned DSH CLI installs the local bundle in a temporary profile.
+- [x] The composed profile contains the diagnostic patch and the plugin loads at runtime.
+- [x] Windows launcher child processes are terminated before temporary cleanup.
+
 ## Risks and mitigations
 
 | Risk | Impact | Mitigation |

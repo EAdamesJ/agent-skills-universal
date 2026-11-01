@@ -44,7 +44,7 @@ async function listFiles(root, prefix = '') {
   const entries = await readdir(root, { withFileTypes: true });
   const files = [];
   for (const entry of entries.sort((left, right) => left.name.localeCompare(right.name))) {
-    if (entry.name === '.git' || entry.name === 'node_modules') continue;
+    if (entry.name === '.git' || entry.name === 'node_modules' || entry.name === 'work') continue;
     const relativePath = prefix ? join(prefix, entry.name) : entry.name;
     if (entry.isDirectory()) {
       files.push(...await listFiles(join(root, entry.name), relativePath));

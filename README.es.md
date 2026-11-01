@@ -6,7 +6,7 @@ Colección de workflows de ingeniería para agentes de código. El mismo núcleo
 
 - Claude Code: clona el repo y ejecútalo con `claude --plugin-dir ./agent-skills-universal`, o instálalo desde el marketplace.
 - Codex: registra el repo con `codex plugin marketplace add` y añade `universal-agent-skills@universal-agent-skills`.
-- DeepSeek Harness: abre el repo como workspace y ejecuta `npx @deepseek-ai/dsh web`; la carpeta `.agents/skills/` ya contiene la proyección necesaria. El bundle diagnóstico opcional está documentado en la guía de DeepSeek Harness.
+- DeepSeek Harness: abre el repo como workspace y ejecuta `npx @deepseek-ai/dsh web`; la carpeta `.agents/skills/` ya contiene la proyección necesaria. Para verificar el bundle diagnóstico en un perfil temporal, ejecuta `npm run smoke:deepseek`. Está documentado en la guía de DeepSeek Harness.
 
 Consulta la guía completa en [README.md](README.md), la instalación detallada en [docs/installation.md](docs/installation.md) y las advertencias de seguridad en [docs/safety.md](docs/safety.md).
 

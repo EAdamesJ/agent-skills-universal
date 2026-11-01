@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Reproducible DeepSeek Harness runtime smoke test with an isolated temporary profile and pinned CLI version.
+
 ## [0.2.0] - 2026-11-01
 
 ### Added

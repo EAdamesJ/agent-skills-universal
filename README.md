@@ -95,9 +95,10 @@ npm run validate
 | `npm test` | Run focused repository tests. |
 | `npm run validate` | Check frontmatter, adapters, mirror parity, docs, and secrets. |
 | `npm run sync:deepseek` | Rebuild `.agents/skills/` from `skills/`. |
+| `npm run smoke:deepseek` | Verify the optional DeepSeek Harness bundle in an isolated temporary profile. |
 | `npm run check` | Run tests and validation together. |
 
-No runtime dependency installation is required for these commands. Node.js 20 or newer is recommended.
+The core validation commands do not need runtime dependency installation. The optional DeepSeek Harness smoke test downloads its pinned preview CLI into a temporary cache. Node.js 20 or newer is recommended.
 
 ## Safety
 

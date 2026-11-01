@@ -10,6 +10,7 @@
 - [x] Task 8: Add an official-format DeepSeek Harness reference bundle and installation guide.
 - [x] Task 9: Tighten DeepSeek skill routing and require rank-1 activation for safety prompts.
 - [x] Task 10: Add negative-path tests for mirror parity, manifests, links, and secret scanning.
+- [x] Task 11: Add the isolated DeepSeek Harness runtime smoke test and manual-dispatch CI job.
 
 ## Checkpoint: Foundation
 
@@ -34,3 +35,9 @@
 - [x] The DSH bundle manifest, patch, and entry point satisfy the documented format.
 - [x] DeepSeek trigger routing reaches 100% rank-1.
 - [x] Validator failure modes have regression tests.
+
+## Checkpoint: Runtime proof
+
+- [x] The pinned DSH CLI installs the local bundle in a temporary profile.
+- [x] The composed profile contains the diagnostic patch and the plugin loads at runtime.
+- [x] Temporary profile cleanup succeeds on Windows.

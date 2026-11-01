@@ -1,20 +1,20 @@
 {
-  "name": "agent-skills",
-  "version": "0.6.15",
-  "description": "Production-grade engineering skills for AI coding agents covering the full software development lifecycle from spec to ship.",
+  "name": "universal-agent-skills",
+  "version": "0.1.0",
+  "description": "Portable production engineering workflows for Claude Code, DeepSeek Harness, Codex, and compatible agents.",
   "author": {
-    "name": "Addy Osmani",
-    "url": "https://github.com/addyosmani"
+    "name": "Enmanuel Adames",
+    "url": "https://github.com/EAdamesJ"
   },
-  "homepage": "https://github.com/addyosmani/agent-skills",
-  "repository": "https://github.com/addyosmani/agent-skills",
+  "homepage": "https://github.com/EAdamesJ/agent-skills-universal",
+  "repository": "https://github.com/EAdamesJ/agent-skills-universal",
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
-    "displayName": "Agent Skills",
-    "shortDescription": "Senior-engineer workflows for AI coding agents: spec, plan, build, test, review, ship.",
-    "longDescription": "Agent Skills bundles 25 production engineering workflows from Addy Osmani, covering requirements, planning, implementation, testing, review, and shipping.",
-    "developerName": "Addy Osmani",
+    "displayName": "Universal Agent Skills",
+    "shortDescription": "Portable workflows for definition, planning, building, testing, review, and shipping.",
+    "longDescription": "Universal Agent Skills packages a portable lifecycle core plus native guidance for Claude Code, DeepSeek Harness, Codex, and compatible agents.",
+    "developerName": "Enmanuel Adames",
     "category": "Productivity",
     "capabilities": [
       "Interactive",

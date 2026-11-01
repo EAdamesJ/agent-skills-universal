@@ -6,6 +6,28 @@ on:
   workflow_dispatch:
 
 jobs:
+  universal-contract:
+    name: Validate universal adapter contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run focused contract tests
+        run: npm test
+
+      - name: Validate the committed pack
+        run: npm run validate
+
+      - name: Confirm DeepSeek projection is reproducible
+        run: |
+          npm run sync:deepseek
+          git diff --exit-code -- .agents/skills
+
   validate-skills:
     name: Validate skill content
     runs-on: ubuntu-latest
@@ -171,4 +193,4 @@ jobs:
         run: claude plugin marketplace list
 
       - name: Install plugin
-        run: claude plugin install agent-skills@addy-agent-skills --scope user
+        run: claude plugin install universal-agent-skills@universal-agent-skills --scope user

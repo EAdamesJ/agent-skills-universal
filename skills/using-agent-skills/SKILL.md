@@ -190,3 +190,10 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 | Ship | documentation-and-adrs | Document the why, not just the what |
 | Ship | observability-and-instrumentation | Structured logs, RED metrics, traces, symptom-based alerts |
 | Ship | shipping-and-launch | Pre-launch checklist, monitoring, rollback plan |
+
+## Verification
+
+- [ ] The task was mapped to the smallest applicable skill set.
+- [ ] Any required spec, plan, test, review, or shipping gate was completed before declaring the work done.
+- [ ] Uncertainty, assumptions, and unresolved conflicts were surfaced instead of hidden.
+- [ ] Evidence supports the final result: tests, build output, runtime behavior, or an explicit limitation.

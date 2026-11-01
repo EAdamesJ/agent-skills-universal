@@ -1,35 +1,34 @@
-# Using agent-skills with Codex
+# Using Universal Agent Skills with Codex
 
-This repository is also a [Codex plugin](https://developers.openai.com/codex/plugins/build). The same root-level `skills/` directory used by Claude Code is consumed by Codex, so no files are copied or duplicated.
+This repository is a Codex plugin. Codex consumes the root `skills/` directory through `.codex-plugin/plugin.json`; no copy of the canonical skills is needed for the Codex installation.
 
 ## Install
 
-```bash
-codex plugin marketplace add addyosmani/agent-skills
-codex plugin add agent-skills@agent-skills
+```text
+codex plugin marketplace add https://github.com/EAdamesJ/agent-skills-universal
+codex plugin add universal-agent-skills@universal-agent-skills
 ```
 
-> Requires Codex CLI v0.122 or later. On older releases the command was `codex marketplace add`. See the [Codex CLI docs](https://developers.openai.com/codex/cli).
+The first command registers this repository as the `universal-agent-skills` marketplace. The second installs the plugin from that marketplace. Start a new Codex session after installation so the skill catalog is refreshed.
 
-The first command registers this repository as the `agent-skills` marketplace. The second command installs and enables the `agent-skills` plugin from that marketplace. Start a new Codex session after installation so the skills are discovered.
+A local checkout can be registered during development:
 
-Local clones work too:
-
-```bash
-codex plugin marketplace add /path/to/your/clone
-codex plugin add agent-skills@agent-skills
+```text
+codex plugin marketplace add /path/to/agent-skills-universal
+codex plugin add universal-agent-skills@universal-agent-skills
 ```
 
 ## Usage
 
-After install, invoke a skill in Codex chat with `@` (e.g. `@spec-driven-development`) or just describe the task and let Codex pick the right skill. All 25 skills under `skills/` are available.
+Invoke a skill explicitly with `@`, for example `@spec-driven-development`, or describe the task and let Codex select a skill from its name and description metadata. The 27 skills under `skills/` are available to the plugin.
 
-[Codex uses progressive disclosure](https://developers.openai.com/codex/skills): it starts with each skill's `name` and `description`, chooses skills on demand, then loads the full `SKILL.md` only when selected. Do not also paste `using-agent-skills/SKILL.md` into `AGENTS.md`, a system prompt, or other always-on context: that stacks the pack's meta-router on Codex's native router and adds unnecessary routing work. The meta-skill can remain installed with the pack; the warning is specifically against preloading its full instructions.
+[Codex uses progressive disclosure](https://developers.openai.com/codex/skills): metadata is available first, and the full `SKILL.md` is loaded only when selected. Do not paste the complete meta-router into an always-on prompt as well as installing the plugin; that duplicates routing work.
 
 ## How it works
 
-- `.codex-plugin/plugin.json` — Codex plugin manifest at the repo root. Points `skills` at `./skills/` and provides the metadata required by Codex.
-- `.agents/plugins/marketplace.json` — marketplace entry declaring the repo root (`./`) as the plugin source.
-- `skills/<name>/SKILL.md` — unchanged. Codex and Claude Code share the same `name` + `description` frontmatter format, so one file serves both platforms.
+- `.codex-plugin/plugin.json` is the Codex plugin manifest.
+- `.agents/plugins/marketplace.json` declares the repository root as the local marketplace source.
+- `skills/<name>/SKILL.md` is shared with Claude Code and other compatible hosts.
+- `.agents/skills/` is the separate DeepSeek Harness projection and is not used by Codex's plugin loader.
 
-Slash commands in `.claude/commands/` and personas in `agents/` stay Claude Code-specific. The `SessionStart` script under `hooks/` is a standalone helper for hosts without native skill routing and is not wired by either plugin. On Codex, invoke the underlying skill directly instead of the slash command (e.g. `@spec-driven-development` instead of `/spec`).
+Claude Code wrappers in `.claude/commands/` are host-specific. On Codex, invoke the underlying skill directly, such as `@spec-driven-development` instead of `/spec`.

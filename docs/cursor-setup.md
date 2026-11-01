@@ -51,7 +51,7 @@ your-project/
 ```
 
 **Source of truth for the agent:** `.cursor/skills/`.  
-Treat `agent-skills/skills/` (or a cloned [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)) as **upstream** — sync into `.cursor/skills/`, do not edit only upstream and expect Cursor to see it.
+Treat `agent-skills-universal/skills/` (or a cloned [Universal Agent Skills](https://github.com/EAdamesJ/agent-skills-universal)) as **upstream** — sync into `.cursor/skills/`, do not edit only upstream and expect Cursor to see it.
 
 ---
 
@@ -225,4 +225,4 @@ Files under `agent-skills/agents/` (e.g. code reviewer persona) are **not** load
 
 - [getting-started.md](getting-started.md)
 - [../README.md](../README.md) — Cursor quick blurb
-- Upstream: [github.com/addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)
+- Universal Agent Skills: [github.com/EAdamesJ/agent-skills-universal](https://github.com/EAdamesJ/agent-skills-universal)

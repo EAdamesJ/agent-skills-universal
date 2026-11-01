@@ -1,0 +1,49 @@
+{
+  "skill_name": "deepseek-harness-plugin-development",
+  "trigger": {
+    "positive": [
+      {
+        "prompt": "Create a Cordis plugin bundle for DeepSeek Harness",
+        "top_k": 3
+      },
+      {
+        "prompt": "Change the dsh profile composition and install it safely",
+        "top_k": 3
+      },
+      {
+        "prompt": "Add a workspace skill that DeepSeek Harness can discover",
+        "top_k": 3
+      },
+      {
+        "prompt": "Debug why a Harness plugin is not mounted in a new session",
+        "top_k": 3
+      }
+    ],
+    "negative": [
+      {
+        "prompt": "Refactor a TypeScript function for readability without changing its behavior",
+        "owner": "code-simplification"
+      },
+      {
+        "prompt": "Review a generic application for OWASP vulnerabilities",
+        "owner": "security-and-hardening"
+      }
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Implement a small DeepSeek Harness Cordis bundle that adds a scoped review preset. Inspect the current profile APIs, keep the bundle reversible, and verify it in a new session.",
+      "expected_output": "A documented workspace bundle with explicit placement, safe installation, and new-session verification",
+      "files": [
+        "deepseek-harness-plugin-development"
+      ],
+      "expectations": [
+        "The change is classified as a workspace skill, bundle, preset, or Host plugin before implementation",
+        "Current Harness APIs and package contracts are inspected rather than guessed",
+        "Profile files are not edited directly and the installation path is reversible",
+        "A fresh session exercises the resulting capability and records diagnostics"
+      ]
+    }
+  ]
+}

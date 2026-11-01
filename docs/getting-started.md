@@ -1,11 +1,10 @@
-# Getting Started with agent-skills
+# Getting Started with Universal Agent Skills
 
-agent-skills works with any AI coding agent that accepts Markdown instructions. This guide covers the universal approach. For tool-specific setup, see the dedicated guides.
+Universal Agent Skills works with any AI coding agent that accepts Markdown instructions. This guide covers the portable approach. For Claude Code, Codex, and DeepSeek Harness setup, see [installation.md](installation.md).
 
-Want a worked example before setting up your own project? The
-[interactive tutorials](https://skills.addy.ie/tutorials/) walk through a
-greenfield build, a brownfield feature, and a safe automation loop with
-copyable prompts for Claude Code, Codex, or any other agent.
+Want a worked example before setting up your own project? Start with the
+[adoption guide](adoption-guide.md), which walks through greenfield and
+brownfield rollout paths for Claude Code, Codex, and compatible agents.
 
 ## How Skills Work
 
@@ -18,7 +17,7 @@ Each skill is a Markdown file (`SKILL.md`) that describes a specific engineering
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/addyosmani/agent-skills.git
+git clone https://github.com/EAdamesJ/agent-skills-universal.git
 ```
 
 ### 2. Choose a skill

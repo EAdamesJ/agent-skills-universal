@@ -1,0 +1,49 @@
+{
+  "skill_name": "deepseek-harness-safety-review",
+  "trigger": {
+    "positive": [
+      {
+        "prompt": "Audit this DeepSeek Harness plugin before giving it filesystem and network access",
+        "top_k": 3
+      },
+      {
+        "prompt": "Before enabling an untrusted DeepSeek Harness extension with API keys, review its filesystem and network permissions",
+        "top_k": 3
+      },
+      {
+        "prompt": "Review a Harness skill for prompt injection and credential exfiltration risk",
+        "top_k": 3
+      },
+      {
+        "prompt": "Decide whether this untrusted dsh extension is safe to enable in a sensitive workspace",
+        "top_k": 3
+      }
+    ],
+    "negative": [
+      {
+        "prompt": "Implement a normal Harness plugin using the documented Cordis extension point",
+        "owner": "deepseek-harness-plugin-development"
+      },
+      {
+        "prompt": "Review a frontend component for accessibility issues",
+        "owner": "frontend-ui-engineering"
+      }
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review an unfamiliar DeepSeek Harness extension that can read the workspace, execute commands, and access an API key. Produce a go/no-go safety report and test abuse cases.",
+      "expected_output": "A threat-modeled review with least privilege, abuse cases, residual risk, and rollback guidance",
+      "files": [
+        "deepseek-harness-safety-review"
+      ],
+      "expectations": [
+        "Assets and trust boundaries are listed before controls are proposed",
+        "Model output and repository content are treated as untrusted input",
+        "Filesystem, process, network, and credential permissions are constrained",
+        "The decision includes residual risk and rollback steps"
+      ]
+    }
+  ]
+}

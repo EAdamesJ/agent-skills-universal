@@ -1,11 +1,11 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "agent-skills",
-  "version": "0.6.15",
-  "description": "Production-grade engineering skills for AI coding agents covering the full software development lifecycle from spec to ship.",
-  "author": { "name": "Addy Osmani", "url": "https://github.com/addyosmani" },
-  "homepage": "https://skills.addy.ie",
-  "repository": "https://github.com/addyosmani/agent-skills",
+  "name": "universal-agent-skills",
+  "version": "0.1.0",
+  "description": "Portable production engineering workflows for Claude Code, DeepSeek Harness, Codex, and compatible agents.",
+  "author": { "name": "Enmanuel Adames", "url": "https://github.com/EAdamesJ" },
+  "homepage": "https://github.com/EAdamesJ/agent-skills-universal",
+  "repository": "https://github.com/EAdamesJ/agent-skills-universal",
   "license": "MIT",
   "keywords": ["skills", "engineering", "spec", "tdd", "review", "ship"]
 }
